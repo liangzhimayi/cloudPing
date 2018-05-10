@@ -1,0 +1,18 @@
+---
+spring:
+  application:
+    name: sample-ping
+  cloud:
+    config:
+        uri: http://192.168.99.100:8787
+#      enabled: true
+#      discovery:
+#        enabled: true
+#        serviceId: SAMPLE-CONFIG
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8080}
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.99.100:8761/eureka/

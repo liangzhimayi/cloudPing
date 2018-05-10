@@ -1,0 +1,40 @@
+---
+spring:
+  application:
+    name: sample-gateway
+
+  cloud:
+    config:
+        uri: http://localhost:8887
+#      enabled: true
+#      discovery:
+#        enabled: true
+#        serviceId: SAMPLE-CONFIG
+rabbitMQ:
+    host: 10.155.20.10
+    username: jlh-user
+    password: jlhpassword
+    vhost: jlh-host
+    appExchange: app-exchange
+    messageQueue: app-message-push
+    messageRouteKey: appMessage
+    aliPayQueue: app-aliPay-push
+    aliPayRouteKey: aliPay
+    smsQueue: app-smsMessage
+    smsRouteKey: smsMessage
+    gjjcrawlerQueue: back-gjj-crawler
+    gjjcrawlerRouteKey: gjjcrawler
+    flowersimproveQueue: back-flowers-improve
+    flowersimproveRouteKey: flowersimprove
+    improvexceptionQueue: back-improve-exception
+    improvexceptionRouteKey: improvexception
+    wechatPushQueue: back-wechatPush
+    wechatPushRouteKey: wechatPush
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:7080}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      

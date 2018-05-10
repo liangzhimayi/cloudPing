@@ -1,0 +1,36 @@
+---
+server:
+  port: 7080
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    samplepong:
+      path: /samplepong/**
+      stripPrefix: true
+      serviceId: sample-pong
+      location: sample-pong
+#      location: http://localhost:8082
+
+ribbon:
+  OkToRetryOnAllOperations: false
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+
+hystrix:
+  command:
+      default:
+        execution:
+          timeout:
+              enabled: false
+
+rabbitMQ:
+    host: 10.155.20.10
+    username: jlh-user
+    password: jlhpassword
+    vhost: jlh-host
+    appExchange: app-exchange
+    messageQueue: app-message-push
+    messageRouteKey: appMessage

@@ -1,0 +1,9 @@
+---
+server:
+  port: 8989
+
+
+
+turbine:
+  aggregator:
+    clusterConfig: sample-ping

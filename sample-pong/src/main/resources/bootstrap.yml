@@ -1,0 +1,29 @@
+---
+spring:
+  application:
+    name: sample-pong
+  cloud:
+    config:
+      uri: http://localhost:8887
+#      enabled: true
+#      discovery:
+#        enabled: true
+#        serviceId: SAMPLE-CONFIG
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8082}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+#hystrix:
+#  command:
+#    pongCommand:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 30000
+#      circuitBreaker:
+#        requestVolumeThreshold: 3
+#        sleepWindowInMilliseconds: 2000
+
